@@ -1,0 +1,109 @@
+Kalózok
+A feladat egy olyan mini-program készítése, amelyben kalózhajók csatáznak egymással.
+Ne gondoljátok (vagy bonyolítsátok) túl a feladatot! A lényeg a program struktúrájának
+kialakítása, az osztályok felépítése, az osztályok közötti viszony meghatározása és
+kezelése. Tehát például az, hogy a hajók vagy a hajókon lévő kalózok hogyan sebzik
+egymást, másodlagos kérdés.
+A feladat megoldása során koncentráljatok az objektum-orientált programozás alapelveinek
+megvalósítására! Emellett (ha időtökből és kedvetekből futja rá) kreatívkodhattok is -
+természetesen.
+--------------------------------------------------------------------------------------
+A feladat kikötései
+1. Legalább két kalózhajó csatázzon egymással. (A későbbiekben bővíthető a program
+úgy, hogy egész hajóflották csapnak össze.)
+2. A hajókon lévő legénység, a kalózok is képesek harcolni egymással. (És a csata
+folyamán meg is teszik.)
+3. A programhoz ajánlott létrehozni az alábbi osztályokat, azokon belül fieldeket és
+metódusokat (minimum). Konstruktorokat, gettereket, settereket, egyéb metódusokat
+hozzáadhattok, természetesen...
+Pirate
+    ● fieldek:
+        name - opcionális String
+        strength - Integer
+        drunkLevel - Integer
+        canFight - boolean
+● metódusok:
+    fight(Pirate enemy)
+        - Can it fight?
+        TODO    ||
+            - How drunk?
+                - random esemény
+        -fight
+Captain extends Pirate
+    ● fieldek:
+        ship (típusa: Ship)
+        rumOwned - Integer
+ TODO   ● metódusok:
+        giveRumToPirate(Pirate happyPirate)
+        executePoorPirate(Pirate poorPirate)
+        @Override fight(Pirate enemy)
+Ship
+    ● fieldek:
+        name - String
+        attackPower - Integer - 1000000 vs 1
+        state - ENUM ("destroyed", "healthy", "damaged")
+        List<Pirate> crew (lehet más adatszerkezet!)
+    ● metódusok:
+        attack(Ship enemy)
+            - state
+                - fight (if ap > ap)
+                    - arányok ap - ap
+                        - if diff > x
+                           -set state to deastroyed
+                        -else
+                           -set state to damaged
+BattleField (osztály, amelyben a csata zajlik)
+   TODO - Search ships - List of ships on the sea
+Battle method(ship vs ship)
+    ship battle
+        pirate fight
+    Winner takes all the RUM!
+
+    Battle:
+
+    1. Battle start
+     - ship state
+        - if !destroyed -> attackPower
+            - if ap > ap -> state megváltoztat
+                - TODO arányok
+
+    2. P-P battle
+    DrunkLevel - Strenght - members - rum mennyiség
+        - Strength - drunkLevel = battleStrength
+         TODO hp a pirate-nek
+            TODO rum +5 hp-t ad és a drunkLevelt növeli 1-el
+
+            - srength vs. strenght
+                - looser strength - winner strength
+
+
+
+
+
+
+
+Egyebek
+1. Először a program megtervezésével, az osztályok vázlatos megvalósításával
+kezdjétek.
+2. Tervezzétek meg azt is, hogy hogyan fog megvalósulni a csata. (Mikor mit
+példányosítotok, hogyan és hol használjátok az objektumokat, mikor melyik metódust
+hívjátok meg stb.)
+3. A csata addig tart, amíg (legalább) az egyik hajó harcképtelenné nem válik.
+Beleírhattok javító (vagy a kalózokhoz gyógyuló) metódusokat, DE! Ügyeljetek arra,
+hogy ne legyen végtelen a csata!
+(Egy hajó harcképtelenné válhat azért például, mert az egész legénység
+harcképtelen, mert teljes roncs lett, mert megfutamodik stb.)
+4. A kalózok a hajójuktól függetlenül harcképtelenné válhatnak. (Talán mert túlságosan
+sérültek, esetleg meg is haltak, vagy túl részegek a harchoz.)
+5. Figyeljetek arra, hogy a harcképtelen hajó vagy kalóz már nem tud tovább harcolni.
+6. A kapitány ugyanúgy kalóz, mint a legénység, csupán ő speciális.
+7. A fent említett osztályok, fieldek és metódusok szabadon módosíthatóak,
+kiegészíthetőek és értelmezhetőek.
+8. A “harci logika” megvalósítása a feladat része ugyan, de nem szükséges a
+túlgondolása.
+(Például… elegendő lehet az is, ha két kalóz összecsapásánál egy random szám
+generálása dönt arról, hogy melyik kalóz győz.)
+9. Ismételten: az objektum-orientált programozás gyakorlása a lényeg, és nem egy
+tökéletesen működő program létrehozása.
+10. Jó munkát!
+Collap
